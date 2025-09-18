@@ -1,0 +1,49 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+x_disc = np.arange(2, 13)
+freq = np.array([1,2,3,4,5,6,5,4,3,2,1])   
+pmf = freq / 36.0                          
+cdf_disc = np.cumsum(pmf)                 
+
+
+def cdf_continuous(x):
+    x = np.asarray(x)
+    F = np.zeros_like(x, dtype=float)
+    
+    mask1 = (x >= 2) & (x <= 7)
+    F[mask1] = (x[mask1]**2)/70.0 - x[mask1]/35.0
+    
+    mask2 = (x > 7) & (x <= 12)
+    F[mask2] = -(x[mask2]**2)/70.0 + (13.0/35.0)*x[mask2] - 7.0/5.0
+    
+    F[x < 2] = 0.0
+    F[x > 12] = 1.0
+    return F
+
+
+x_fine = np.linspace(1.5, 12.5, 500)
+y_cont = cdf_continuous(x_fine)
+
+
+plt.figure(figsize=(9,5))
+
+
+plt.plot(x_fine, y_cont, linewidth=2, label='CDF continua (aprox. triangular)')
+
+
+plt.step(np.concatenate(([1.9], x_disc, [12.1])),
+         np.concatenate(([0.0], cdf_disc, [1.0])),
+         where='post', linewidth=2, label='CDF discreta (dos dados)')
+plt.scatter(x_disc, cdf_disc, s=50, zorder=5, label='Puntos discretos')
+
+
+plt.title("Función acumulativa (CDF) — suma de dos dados")
+plt.xlabel("Suma de los dos dados")
+plt.ylabel("Probabilidad acumulada")
+plt.xticks(np.arange(2,13))
+plt.yticks(np.linspace(0,1,11))
+plt.grid(alpha=0.3)
+plt.legend()
+plt.show()
