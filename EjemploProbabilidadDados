@@ -27,18 +27,18 @@ ax.legend()
 
 texto = (
     r"$F(x)=$" + "\n" +
-    r"$0$" + r"$,\; x<2$" + "\n" +
-    r"$\frac{1}{36}=$" + r" $\left(0 + \frac{1}{36}\right)$" + r"$,\; x=2$" + "\n" +
-    r"$\frac{3}{36}=$" + r" $\left(\frac{1}{36} + \frac{2}{36}\right)$" + r"$,\; x=3$" + "\n" +
-    r"$\frac{6}{36}=$" + r" $\left(\frac{3}{36} + \frac{3}{36}\right)$" + r"$,\; x=4$" + "\n" +
-    r"$\frac{10}{36}=$" + r" $\left(\frac{6}{36} + \frac{4}{36}\right)$" + r"$,\; x=5$" + "\n" +
-    r"$\frac{15}{36}=$" + r" $\left(\frac{10}{36} + \frac{5}{36}\right)$" + r"$,\; x=6$" + "\n" +
-    r"$\frac{21}{36}=$" + r" $\left(\frac{15}{36} + \frac{6}{36}\right)$" + r"$,\; x=7$" + "\n" +
-    r"$\frac{26}{36}=$" + r" $\left(\frac{21}{36} + \frac{5}{36}\right)$" + r"$,\; x=8$" + "\n" +
-    r"$\frac{30}{36}=$" + r" $\left(\frac{26}{36} + \frac{4}{36}\right)$" + r"$,\; x=9$" + "\n" +
-    r"$\frac{33}{36}=$" + r" $\left(\frac{30}{36} + \frac{3}{36}\right)$" + r"$,\; x=10$" + "\n" +
-    r"$\frac{35}{36}=$" + r" $\left(\frac{33}{36} + \frac{2}{36}\right)$" + r"$,\; x=11$" + "\n" +
-    r"$1=$" + r" $\left(\frac{35}{36} + \frac{1}{36}\right)$" + r"$,\; x\geq 12$"
+    r"$0$" + r"$,\; 0 \leq x < 2$" + "\n" +
+    r"$\frac{1}{36}=$" + r" $\left(0 + \frac{1}{36}\right)$" + r"$,\; 2 \leq x < 3$" + "\n" +
+    r"$\frac{3}{36}=$" + r" $\left(\frac{1}{36} + \frac{2}{36}\right)$" + r"$,\; 3 \leq x < 4$" + "\n" +
+    r"$\frac{6}{36}=$" + r" $\left(\frac{3}{36} + \frac{3}{36}\right)$" + r"$,\; 4 \leq x < 5$" + "\n" +
+    r"$\frac{10}{36}=$" + r" $\left(\frac{6}{36} + \frac{4}{36}\right)$" + r"$,\; 5 \leq x < 6$" + "\n" +
+    r"$\frac{15}{36}=$" + r" $\left(\frac{10}{36} + \frac{5}{36}\right)$" + r"$,\; 6 \leq x < 7$" + "\n" +
+    r"$\frac{21}{36}=$" + r" $\left(\frac{15}{36} + \frac{6}{36}\right)$" + r"$,\; 7 \leq x < 8$" + "\n" +
+    r"$\frac{26}{36}=$" + r" $\left(\frac{21}{36} + \frac{5}{36}\right)$" + r"$,\; 8 \leq x < 9$" + "\n" +
+    r"$\frac{30}{36}=$" + r" $\left(\frac{26}{36} + \frac{4}{36}\right)$" + r"$,\; 9 \leq x < 10$" + "\n" +
+    r"$\frac{33}{36}=$" + r" $\left(\frac{30}{36} + \frac{3}{36}\right)$" + r"$,\; 10 \leq x < 11$" + "\n" +
+    r"$\frac{35}{36}=$" + r" $\left(\frac{33}{36} + \frac{2}{36}\right)$" + r"$,\; 11 \leq x < 12$" + "\n" +
+    r"$1=$" + r" $\left(\frac{35}{36} + \frac{1}{36}\right)$" + r"$,\; x \geq 12$"
 )
 
 ax.text(1.8, 0.2, texto, fontsize=13,
