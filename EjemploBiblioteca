@@ -1,0 +1,43 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+
+
+dias=["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+ventas=[35, 42, 30, 50, 70, 90, 65]
+
+
+plt.figure(figsize=(6,6))
+plt.bar(dias, ventas, color="cyan")
+plt.title("Ventas de helados en una semana")
+plt.xlabel("Días de la semana")
+plt.ylabel("Helados vendidos")
+plt.show()
+
+
+plt.figure(figsize=(6,6))
+plt.pie(ventas, labels=dias, autopct="%1.1f%%", startangle=90, colors=plt.cm.cool(np.linspace(0,1,len(dias))))
+plt.title("Distribución de ventas de helados en la semana")
+plt.show()
+
+fig=plt.figure(figsize=(8,6))
+ax=fig.add_subplot(111, projection='3d')
+_x = np.arange(len(dias))
+_y = np.array([0])  
+_xx, _yy = np.meshgrid(_x, _y)
+x, y = _xx.ravel(), _yy.ravel()
+
+z=np.zeros_like(x)
+dx=np.ones_like(x) * 0.5
+dy=np.ones_like(y) * 0.2
+dz=ventas
+
+ax.bar3d(x, y, z, dx, dy, dz, color="lightblue", shade=True)
+ax.set_xticks(range(len(dias)))
+ax.set_xticklabels(dias, rotation=45)
+ax.set_xlabel("Días de la semana")
+ax.set_ylabel("Categoría")
+ax.set_zlabel("Helados vendidos")
+ax.set_title("Ventas de helados en 3D")
+
+plt.show()
